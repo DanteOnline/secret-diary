@@ -1,4 +1,4 @@
-from code_aes import AesCoder
+from .code_aes import AesCoder
 
 
 class DiaryCoder(AesCoder):
@@ -32,17 +32,3 @@ class Diary:
         btext = self.coder.code_text(text)
         with open(self.fpath, 'wb') as f:
             f.write(btext)
-
-
-if __name__ == '__main__':
-    fpath = input('Input file path')
-    key = input('Input key')
-    d = Diary(fpath, key)
-    text = d.read()
-    print(text)
-    while True:
-        new_row = input('>')
-        if new_row.startswith('end'):
-            d.write(text)
-            break
-        text += '\n' + new_row

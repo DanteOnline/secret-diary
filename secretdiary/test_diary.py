@@ -1,6 +1,5 @@
-from pytest import raises
 import os
-from diary import DiaryCoder, Diary
+from .diary import DiaryCoder, Diary
 
 
 class TestCoder:
